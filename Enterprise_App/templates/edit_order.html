@@ -1,0 +1,26 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+    <div
+        class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style="
+            background-image: url('../static/img/tech2.jpg');
+            height: 140vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        ">
+        <h1>Edit Order</h1>
+        {% from "includes/_formhelpers.html" import render_field %}
+            <form method ="POST" action="">
+               <div class="form-group">
+                    {{ render_field(form.product_type , class_="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ render_field(form.manufacturer , class_="form-control") }}
+                </div>
+                <p><input class="btn btn-primary" type="submit" value="Submit"></p>
+            </form>
+    </div>
+
+{% endblock %}

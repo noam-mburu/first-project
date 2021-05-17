@@ -1,0 +1,28 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+    <div
+        class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style="
+            background-image: url('../static/img/tech7.jpg');
+            height: 140vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        ">
+        <h1><span class="text-success">L</span>ogin</h1>
+        </style>
+        <form action="" method="POST">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" value={{request.form.username}}>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" value={{request.form.password}}>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}

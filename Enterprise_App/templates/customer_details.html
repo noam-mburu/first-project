@@ -1,0 +1,66 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+    <div
+        class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style="
+            background-image: url('../static/img/customer.jpg');
+            height: 140vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        ">
+        <h1>Customer <span class="text-success">D</span>etails</h1>
+        <table class="table table-striped">
+            <tr>
+                <th class="text-light">ID</th>
+                <th class="text-light">Username</th>
+                <th class="text-light">Name</th>
+                <th class="text-light">Phone Number</th>
+                <th class="text-light">Address</th>
+            </tr>
+            {% for customer in customers %}
+            <tr>
+                <td class="text-light">{{customer.id}}</td>
+                <td class="text-light">{{customer.username}}</td>
+                <td class="text-light">{{customer.name}}</td>
+                <td class="text-light">{{customer.phone_no}}</td>
+                <td class="text-light">{{customer.address}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+
+        <hr>
+        <h2>Contract Customers</h2>
+        <table class="table table-striped">
+            <tr>
+            
+                <th class="text-light">Username</th>
+                <th class="text-light">Account Number</th>
+            </tr>
+            {% for cont in contract %}
+            <tr>
+                <td class="text-light">{{cont.username}}</td>
+                <td class="text-light">{{cont.acc_no}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+        <hr>
+        <h2>Non-contract Customers</h2>
+        <table class="table table-striped">
+            <tr>
+                <th class="text-light">Username</th>
+                <th class="text-light">Card No</th>
+            </tr>
+            {% for other in others %}
+            <tr>
+                <td class="text-light">{{other.username}}</td>
+                <td class="text-light">{{other.card_no}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+    <div
+        class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style="
+            background-image: url('../static/img/register2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        ">
+        <h1><span class="text-success">R</span>egister</h1>
+        {% from "includes/_formhelpers.html" import render_field %}
+        <form method="POST" action = "">
+            <div class="form-group text-light">
+                {{ render_field(form.name, class = "form-control") }}
+            </div>
+            <div class="form-group text-light">
+                {{ render_field(form.username, class = "form-control") }}
+            </div>
+            <div class="form-group text-light">
+                {{ render_field(form.phone_no, class = "form-control") }}
+            </div>
+            <div class="form-group text-light">
+                {{ render_field(form.address, class = "form-control") }}
+            </div>
+            <div class="form-group text-light">
+                {{ render_field(form.acc_no, class = "form-control") }}
+            </div>
+            <div class="form-group text-light">
+                {{ render_field(form.card_no, class = "form-control") }}
+            </div>
+            <div class="form-group text-light">
+                {{ render_field(form.password, class = "form-control") }}
+            </div>
+            <div class="form-group text-light">
+                {{ render_field(form.confirm, class = "form-control") }}
+            </div>
+            <p><input type="submit" classs = "btn btn-primary" classvalue="Submit"></p>
+        </form>
+    </div>
+
+{% endblock %}

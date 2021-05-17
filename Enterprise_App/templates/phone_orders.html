@@ -1,0 +1,45 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+    <div
+        class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style="
+            background-image: url('../static/img/tech8.jpg');
+            height: 140vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        ">
+        <h1>Phone <span class="text-success">O</span>rders</h1>
+        <a class="btn btn-success" href="/add_phone_order">Add Phone Order</a>
+        <hr>
+        <table class="table table-striped">
+            <tr>
+                <th class="text-light">ID</th>
+                <th class="text-light">Customer</th>
+                <th class="text-light">Product Type</th>
+                <th class="text-light">Manufacturer</th>
+                <th class="text-light">Price</th>
+                <th class="text-light">Date</th>
+                <th class="text-light"></th>
+            </tr>
+            {% for sale in sales %}
+            <tr>
+                <td class="text-light">{{sale.id}}</td>
+                <td class="text-light">{{sale.customer}}</td>
+                <td class="text-light">{{sale.product_type}}</td>
+                <td class="text-light">{{sale.manufacturer}}</td>
+                <td class="text-light">{{sale.price}}</td>
+                <td class="text-light">{{sale.sale_date}}</td>
+                <td>
+                    <form action="{{url_for('delete_phone_order', id= sale.id)}}" method="post">
+                        <input type="hidden" name = "_method" value="DELETE">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

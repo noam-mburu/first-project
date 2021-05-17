@@ -1,0 +1,28 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+    
+    <div class="jumbotron text-center"
+        style="
+            background-image: url('../static/img/tech16.jpg');
+            height: 140vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        ">
+        <h1 class="text-white">Welcome to <span class="text-success">Tech</span> Enterprise</h1>
+        <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, reiciendis, blanditiis sit velit dolorem quisquam magni consequuntur laboriosam nulla, placeat minus libero harum odio modi natus! Officiis cupiditate facere ab!</p>
+        <hr>
+        <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi reiciendis sunt asperiores officiis vero ipsam cumque corrupti impedit delectus? Nesciunt culpa nobis explicabo rem quos odit porro totam doloremque veniam.</p>
+        <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus voluptas consectetur omnis quisquam nam dolor possimus quia. Nam pariatur molestiae officia harum quam? Nemo, deserunt corporis quo voluptas ex reprehenderit!</p>
+        <hr>
+        {% if session.customer_logged_in == NULL %}
+            <a href="/register" class="btn btn-primary btn-lg">Register</a>
+            <a href="/login" class="btn btn-success btn-lg">Login</a>
+        {% endif %}
+        {% if session.admin_logged_in == NULL %}
+            <a href="/admin_login" class="btn btn-success btn-lg">Admin Login</a>
+        {% endif %}
+    </div>   
+
+{% endblock %}

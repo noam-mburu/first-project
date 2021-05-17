@@ -1,0 +1,30 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+    <div
+        class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+        style="
+            background-image: url('../static/img/products2.jpg');
+            height: 140vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        ">
+        <h1><span class="text-success">P</span>roducts</h1>
+        <table class="table table-striped">
+            <tr>
+                <th class="text-light">Product Type</th>
+                <th class="text-light">Manufacturer</th>
+                <th class="text-light">Price</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td class="text-light">{{product.type}}</td>
+                <td class="text-light">{{product.manufacturer}}</td>
+                <td class="text-light">{{product.price}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
